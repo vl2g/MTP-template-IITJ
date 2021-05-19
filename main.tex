@@ -1,0 +1,66 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% Author: Anand Mishra %%%%%%%%%%%%%%%%
+%%%%%%%%%%% Email: mishra@iitj.ac.in %%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}[12pt, onehalfspacing]
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\newcommand{\HRule}{\rule{.9\linewidth}{.6pt}}
+\usepackage{geometry}
+\usepackage{chngcntr}
+\counterwithin{table}{section}
+\counterwithin{figure}{section}
+\usepackage{afterpage}
+\usepackage[export]{adjustbox}
+\usepackage{datetime}
+\newdateformat{monthyeardate}{%
+  \monthname[\THEMONTH], \THEYEAR}
+\newcommand\myemptypage{
+    \null
+    \thispagestyle{empty}
+    %\addtocounter{page}{-1}
+    \newpage
+    }
+
+\newgeometry{
+	paper=a4paper, % Change to letterpaper for US letter
+	inner=1in, % Inner margin
+	outer=1in, % Outer margin
+	bindingoffset=.5cm, % Binding offset
+	top=0.75in, % Top margin
+	bottom=0.75in, % Bottom margin
+	%showframe, % Uncomment to show how the type block is set on the page
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%% Change %%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\ttitle}{Title of the Project Report}
+\newcommand{\supname}{Name of the Supervisor} 
+\newcommand{\degree}{Name of the Degree}
+\newcommand{\authorname}{Name of the Student}
+\newcommand{\rn}{Roll Number of the Student}
+\newcommand{\univname}{IIT Jodhpur} 
+\newcommand{\deptname}{Name of the Department}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\include{titlePage}
+\pagenumbering{roman}
+\setcounter{page}{3}
+\include{declaration}
+\include{certificate}
+\include{abstract}
+\include{acknowledgments}
+\begin{flushright}
+\tableofcontents
+\clearpage
+\listoffigures
+\listoftables
+\end{flushright}
+\pagenumbering{arabic}
+\include{mainReport}
+\bibliographystyle{IEEEtran}
+\bibliography{refs}
+\end{document}
